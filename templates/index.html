@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сервер картинок</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css' ) }}">
+</head>
+
+<header>
+     <h1>Все картинки здесь!</h1>
+
+<nav>
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/upload/">Загрузить</a></li>
+        <li><a href="/images/">Посмотреть</a></li>
+    </ul>
+</nav>
+
+</header>
+
+<body>
+
+
+    <section>
+        <h2> Добро пожаловать! </h2>
+    <p> Наш сервис — это не просто хранилище картинок. Это место, где пользователи могут:
+        <ul>
+        <li>  Загружать фотки в популярных форматах (.jpg, .png, .gif).   </li>
+        <li> Быть уверенными, что ваши картинки надежно сохранены.</li>
+        <li> Получать удобные прямые ссылки на загруженные изображения.</li>
+    </ul>
+
+        <figure>
+            <img src="{{ url_for('static', path='/img/heroes/'+ hero) }}" alt="Hero" height=300px">
+        </figure>
+
+    </p>
+
+    </section>
+
+
+</body>
+
+</html>

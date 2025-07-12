@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сервер картинок</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css' ) }}">
+</head>
+
+<header>
+     <h1>Все картинки здесь!</h1>
+
+<nav>
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/upload/">Загрузить</a></li>
+        <li><a href="/images/">Посмотреть</a></li>
+    </ul>
+</nav>
+
+</header>
+
+<body>
+    <h1>Картинки</h1>
+        {% for img in images %}
+
+                 <figure>
+                    <img src="{{ url_for('static', path='/img/uploads/' + img ) }}" alt="img" height=300px">
+                </figure>
+        {% endfor %}
+</body>
+</html>

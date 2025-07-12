@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Сервер картинок</title>
+    <link rel="stylesheet" href="{{ url_for('static', path='/css/style.css' ) }}">
+</head>
+
+<header>
+     <h1>Все картинки здесь!</h1>
+
+<nav>
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/upload/">Загрузить</a></li>
+        <li><a href="/images/">Посмотреть</a></li>
+    </ul>
+</nav>
+
+</header>
+
+</header>
+
+<body>
+    <h1>Загрузки</h1>
+
+    <form action="/upload/" enctype="multipart/form-data" method="post">
+        <input type="file" name='file' accept="image/*" required>
+        <button type="submit">Загрузить</button>
+    </form>
+
+    {% if filename %}
+        <p>
+           {{ filename }} был загружен успешно! Посмотреть ваше изображение теперь можно
+            <a style="color:Orange;" href="http://127.0.0.1:8000/static/img/uploads/{{new_filename}}">здесь</a>
+        </p>
+    {% endif %}
+
+</body>
+</html>
